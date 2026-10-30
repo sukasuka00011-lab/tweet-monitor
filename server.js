@@ -81,7 +81,7 @@ setInterval(() => { if (cfg.intervalMin > 0 && Date.now() - st.lastPoll > cfg.in
 const send = (res, code, body, type = 'application/json') => { res.writeHead(code, { 'Content-Type': type + '; charset=utf-8' }); res.end(typeof body === 'string' ? body : JSON.stringify(body)); };
 const body = req => new Promise(r => { let b = ''; req.on('data', c => b += c); req.on('end', () => { try { r(JSON.parse(b || '{}')); } catch { r({}); } }); });
 
-http.createServer(async (req, res) => {
+const srv = http.createServer(async (req, res) => { try {
   if (PW) {
     const p = Buffer.from((req.headers.authorization || '').split(' ')[1] || '', 'base64').toString().split(':').slice(1).join(':');
     if (p !== PW) { res.writeHead(401, { 'WWW-Authenticate': 'Basic realm="Peluang masuk"' }); return res.end('Login diperlukan'); }
@@ -104,5 +104,9 @@ http.createServer(async (req, res) => {
       [l.id, l.user, l.name, l.at, l.product, l.status, l.text, `https://x.com/${l.user}/status/${l.id}`].map(q).join(',')));
     res.writeHead(200, { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename=peluang.csv' }); return res.end('\ufeff' + rows.join('\n'));
   }
-  send(res, 200, fs.readFileSync(path.join(__dirname, 'public', 'index.html'), 'utf8'), 'text/html');
-}).listen(PORT, process.env.PORT ? '0.0.0.0' : '127.0.0.1', () => console.log('Jalan di port ' + PORT));
+  send(res, 200, fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8'), 'text/html');
+} catch (e) { console.error(e); if (!res.headersSent) res.writeHead(500); res.end('Error'); }
+});
+srv.keepAliveTimeout = 120000; srv.headersTimeout = 125000;
+process.on('uncaughtException', e => console.error(e));
+srv.listen(PORT, process.env.PORT ? '0.0.0.0' : '127.0.0.1', () => console.log('Jalan di port ' + PORT));
