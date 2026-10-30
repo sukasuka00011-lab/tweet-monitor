@@ -2,34 +2,44 @@
 <html lang="id"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Peluang masuk</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#d9d2f1;--card:#fff5fa;--ink:#4a2545;--mut:#8a6d85;--pk:#d6288a;--pk2:#fbd3e8;--bd:#f0a9d0}
-@media(prefers-color-scheme:dark){:root{--bg:#1e1830;--card:#2a2040;--ink:#f6e6f3;--mut:#b99bb4;--pk:#ff6fb5;--pk2:#4a2a55;--bd:#6b3d78}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,sans-serif}
-.w{max-width:640px;margin:auto;padding:20px 16px 60px}
-h1{font-size:28px;margin:0;display:inline}.pill{background:var(--pk2);border-radius:99px;padding:2px 12px;font-size:15px;margin-left:8px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.top a,.top button{color:var(--mut);background:none;border:0;font:inherit;cursor:pointer;text-decoration:none}
-.tabs{display:flex;gap:18px;overflow-x:auto;border-bottom:2px solid var(--bd);margin:18px 0}
-.tabs b{padding:8px 0;color:var(--mut);cursor:pointer;white-space:nowrap}.tabs b.on{color:var(--pk);border-bottom:3px solid var(--pk);margin-bottom:-2px}
-.row{display:flex;gap:10px}input,select,textarea{width:100%;background:var(--card);color:var(--ink);border:2px solid var(--bd);border-radius:18px;padding:12px 14px;font:inherit}
-textarea{border-radius:16px;min-height:80px}
-.card{background:var(--card);border:2px solid var(--bd);border-radius:26px;padding:18px;margin-top:16px}
-.hd{display:flex;gap:12px;align-items:center}.av{width:44px;height:44px;border-radius:50%;background:var(--pk2);display:grid;place-items:center;font-weight:700}
-.hd .n{flex:1;min-width:0}.n b{display:block;overflow:hidden;text-overflow:ellipsis}.n small{color:var(--mut)}
-.chip{border:1.5px solid var(--bd);background:var(--pk2);border-radius:99px;padding:3px 12px;font-size:13px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tx{font-size:19px;white-space:pre-wrap;word-break:break-word}
-mark{background:var(--pk2);color:var(--pk);border-radius:6px;padding:0 4px}.m{color:var(--mut);font-size:14px;margin:10px 0}
-.act{display:flex;gap:14px;align-items:center;border-top:1px solid var(--bd);padding-top:14px;flex-wrap:wrap}
-.btn{border:2px solid var(--bd);border-radius:99px;padding:10px 18px;background:var(--card);color:var(--pk);font-weight:700;cursor:pointer;text-decoration:none;font-size:15px}
-.btn.f{background:var(--pk);color:#fff;border-color:var(--pk)}.act a.l{color:var(--mut);text-decoration:none}.act select{width:auto;margin-left:auto;padding:6px 10px;border-radius:12px}
-.bm{background:none;border:0;font-size:22px;cursor:pointer;color:var(--pk)}
-#set{display:none}.sec{margin:18px 0 6px;font-weight:700}.hint{font-size:13px;color:var(--mut);margin:4px 0 6px}
-.prods{display:flex;flex-wrap:wrap;gap:8px}.prods label{display:flex;gap:6px;align-items:center;border:2px solid var(--bd);border-radius:14px;padding:8px 12px;background:var(--card)}
-.prods input{width:auto}.err{background:#ffe0e6;color:#a0123a;border-radius:14px;padding:10px 14px;margin-top:12px}
+:root{--c1:#ACEEF3;--c2:#C2ED97;--c3:#FCBCD7;--c4:#9CCCFF;--c5:#FFF1A3;--ink:#111}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:600 16px/1.4 Nunito,ui-rounded,system-ui,sans-serif;min-height:100vh;background-attachment:fixed}
+.w{max-width:640px;margin:auto;padding:18px 14px 70px}
+.hero{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{width:62px;height:62px;border-radius:50%;border:3px solid #111;background:var(--c5);display:grid;place-items:center;font-size:30px;cursor:pointer;overflow:hidden;box-shadow:0 3px 0 #111;flex:none}
+.logo img{width:100%;height:100%;object-fit:cover}
+.rib{background:var(--c4);border:2.5px solid #111;border-radius:18px;padding:6px 16px;font-weight:800;font-size:24px;box-shadow:0 3px 0 #111}
+.pill{background:var(--c5);border:2px solid #111;border-radius:99px;padding:0 10px;font-size:14px;font-weight:800;margin-left:6px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 6px}
+.btn{background:var(--c2);color:#111;border:2px solid #111;border-radius:99px;padding:9px 16px;font:800 15px Nunito,sans-serif;box-shadow:0 3px 0 #111;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #111}.btn.w2{background:#fff}
+.m{font-size:14px;margin:8px 2px}.err{background:#fff;border:2.5px solid #111;border-radius:16px;padding:10px 14px;margin:10px 0}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:8px 2px}
+.tabs b{white-space:nowrap;cursor:pointer;background:#ffffffb0;border:2px solid #111;border-radius:99px;padding:5px 14px}.tabs b.on{background:var(--c4);box-shadow:0 3px 0 #111}
+.row{display:flex;gap:10px}
+input:not([type=color]):not([type=checkbox]),select,textarea{width:100%;background:#fff;color:#111;border:3px solid var(--c4);border-radius:18px;padding:11px 14px;font:600 16px Nunito,sans-serif}
+textarea{min-height:76px}input[type=color]{width:46px;height:46px;border:3px solid #111;border-radius:50%;padding:0;background:none;cursor:pointer}
+.card{background:var(--c3);border:7px solid var(--c2);border-radius:30px;padding:16px 16px 14px;margin-top:18px;position:relative}
+.card:before,.card:after{content:"";position:absolute;top:-2px;width:14px;height:14px;border-radius:50%;background:var(--c5);border:2px solid #111}
+.card:before{left:-2px}.card:after{right:-2px}
+.hd{display:flex;gap:10px;align-items:center}.av{width:44px;height:44px;border-radius:50%;background:#fff;border:2.5px solid #111;display:grid;place-items:center;font-weight:800;flex:none}
+.n{flex:1;min-width:0}.n b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.n small{font-weight:600}
+.chip{background:var(--c5);border:2px solid #111;border-radius:99px;padding:2px 11px;font-size:13px;font-weight:800}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tx{font-size:18px;white-space:pre-wrap;word-break:break-word;background:#ffffff90;border-radius:18px;padding:10px 12px}
+mark{background:var(--c5);color:#111;border-radius:6px;padding:0 4px;font-weight:800}
+.act{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}.act a.l{color:#111}.act select{width:auto;margin-left:auto;padding:6px 10px;border-radius:12px}
+.bm{background:none;border:0;font-size:26px;cursor:pointer;color:#111}
+#set{display:none}.box{background:#ffffffc0;border:3px solid var(--c4);border-radius:24px;padding:14px;margin-top:16px}
+.sec{font-weight:800;font-size:18px;margin-bottom:4px}.hint{font-size:13px;margin:2px 0 8px}
+.prods{display:flex;flex-wrap:wrap;gap:8px}.prods label{display:flex;gap:6px;align-items:center;border:2px solid #111;border-radius:14px;padding:6px 10px;background:#fff}.prods input{width:auto}
+.cp{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;text-align:center;width:72px}
 </style></head><body><div class="w">
-<div class="top"><div><h1>Peluang masuk</h1><span class="pill" id="cnt">0</span></div>
-<div><button id="poll" class="btn f">Cari sekarang</button> <button id="gear" class="btn">⚙ Pengaturan</button> <a href="/api/export.csv">⬇ Ekspor CSV</a></div></div>
+<div class="hero"><label class="logo" id="logo" title="Ganti foto logo">🐱</label><input type="file" id="lf" accept="image/*" hidden>
+<div><span class="rib">Peluang masuk</span><span class="pill" id="cnt">0</span></div></div>
+<div class="bar"><button id="poll" class="btn">✨ Cari sekarang</button><button id="gear" class="btn w2">⚙ Pengaturan</button><a class="btn w2" href="/api/export.csv">⬇ CSV</a></div>
 <div id="err"></div><div id="inf" class="m"></div>
 
 <div id="dash"><div class="tabs" id="tabs"></div>
@@ -37,23 +47,50 @@ mark{background:var(--pk2);color:var(--pk);border-radius:6px;padding:0 4px}.m{co
 <div id="list"></div></div>
 
 <div id="set">
-<div class="sec">API</div><div class="hint">Pakai <b>twitterapi.io</b> (kredit gratis ±$1, tanpa kartu) atau <b>X resmi</b> (Bearer token, kredit berbayar). Key tersimpan lokal di data/config.json.</div>
-<div class="row"><select id="prov"><option value="twitterapi_io">twitterapi.io</option><option value="x_official">X API resmi (pay-per-use)</option></select><input id="key" type="password" placeholder="API key / Bearer token"></div>
-<div class="row" style="margin-top:10px"><input id="int" type="number" min="0" placeholder="Auto-cari tiap … menit (0 = manual)"><input id="max" type="number" min="10" max="100" placeholder="Maks tweet per pencarian"></div>
-<div class="sec">Produk pantauan</div><div class="prods" id="prods"></div>
-<div class="row" style="margin-top:10px"><input id="np" placeholder="Tambah aplikasi"><button class="btn" id="addp">+ Tambah</button></div>
-<div class="sec">Hashtag pantauan</div><div class="hint">Pisahkan dengan koma. Maksimal 8.</div><textarea id="hs"></textarea>
-<div class="sec">Tanda ingin membeli</div><div class="hint">Tweet harus memuat minimal satu.</div><textarea id="sg"></textarea>
-<div class="sec">Abaikan kata</div><div class="hint">Tweet yang memuat ini dibuang.</div><textarea id="ig"></textarea>
-<div class="sec">Template balasan</div><div class="hint">Variabel: {nama} {username} {produk}</div><textarea id="tp"></textarea>
-<p><button class="btn f" id="sv">Simpan</button></p></div>
+<div class="box"><div class="sec">🎨 Tampilan</div><div class="hint">Ketuk lingkaran warna untuk mengganti. Tersimpan di browser HP-mu.</div>
+<div class="prods" id="cps"></div>
+<div class="bar"><button class="btn w2" data-pre="Kobamland">Kobamland</button><button class="btn w2" data-pre="Permen">Permen</button><button class="btn w2" data-pre="Mint">Mint</button></div>
+<div class="hint">Motif latar:</div><div class="bar"><button class="btn w2" data-pat="star">⭐ Bintang</button><button class="btn w2" data-pat="dot">⚪ Polkadot</button><button class="btn w2" data-pat="none">Polos</button></div>
+<div class="bar"><button class="btn" id="lgb">📷 Pilih foto logo</button><button class="btn w2" id="lgx">Hapus logo</button></div></div>
+
+<div class="box"><div class="sec">API</div><div class="hint">twitterapi.io (kredit gratis) atau X resmi. Kalau key diisi lewat Environment Render, itu yang dipakai.</div>
+<div class="row"><select id="prov"><option value="twitterapi_io">twitterapi.io</option><option value="x_official">X API resmi</option></select><input id="key" type="password" placeholder="API key"></div>
+<div class="row" style="margin-top:10px"><input id="int" type="number" min="0" placeholder="Auto-cari tiap … menit (0 = manual)"><input id="max" type="number" min="10" max="100" placeholder="Maks tweet"></div></div>
+
+<div class="box"><div class="sec">Produk pantauan</div><div class="prods" id="prods"></div>
+<div class="row" style="margin-top:10px"><input id="np" placeholder="Tambah aplikasi"><button class="btn" id="addp">+</button></div></div>
+
+<div class="box"><div class="sec">Hashtag pantauan</div><div class="hint">Pisahkan dengan koma. Maksimal 8. Ketuk untuk menambah cepat:</div>
+<div class="prods" id="hq" style="margin-bottom:8px"></div><textarea id="hs"></textarea></div>
+<div class="box"><div class="sec">Tanda ingin membeli</div><div class="hint">Tweet harus memuat minimal satu.</div><textarea id="sg"></textarea></div>
+<div class="box"><div class="sec">Abaikan kata</div><textarea id="ig"></textarea></div>
+<div class="box"><div class="sec">Template balasan</div><div class="hint">Variabel: {nama} {username} {produk}</div><textarea id="tp"></textarea></div>
+<p><button class="btn" id="sv">💾 Simpan</button></p></div>
 </div>
 <script>
 const $=id=>document.getElementById(id),E=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ST=[['semua','Semua'],['baru','Baru'],['ditindaklanjuti','Ditindaklanjuti'],['selesai','Selesai'],['diabaikan','Diabaikan'],['simpan','Tersimpan']];
+const PRE={Kobamland:{c1:'#FCBCD7',c2:'#C2ED97',c3:'#ACEEF3',c4:'#9CCCFF',c5:'#FFF1A3'},Permen:{c1:'#d9d2f1',c2:'#f5a9d0',c3:'#ffe3f1',c4:'#c9b8f5',c5:'#ffe9a8'},Mint:{c1:'#d4f5e9',c2:'#a8e6cf',c3:'#ffd6e0',c4:'#b5d8ff',c5:'#fff3b0'}};
+const CL={c1:'Latar',c2:'Garis & tombol',c3:'Kartu',c4:'Pita & tab',c5:'Label & sorot'};
+const ls={get:k=>{try{return localStorage.getItem(k)}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch{}},del:k=>{try{localStorage.removeItem(k)}catch{}}};
+let theme;try{theme=JSON.parse(ls.get('th2'))}catch{}theme=theme||{...PRE.Kobamland};
+function star(cx,cy,R,f,o){let p=[];for(let i=0;i<10;i++){const a=Math.PI/5*i-Math.PI/2,q=i%2?R*.45:R;p.push((cx+q*Math.cos(a)).toFixed(1)+','+(cy+q*Math.sin(a)).toFixed(1))}return `<polygon points="${p.join(' ')}" fill="${f}" opacity="${o}"/>`}
+function bg(){const t=theme,m=ls.get('pat')||'star';let s='',z=60;
+ if(m==='star'){z=96;s=star(22,24,12,t.c5,.95)+star(72,64,8,'#fff',.85)+star(26,78,5,'#fff',.75)+`<circle cx="76" cy="20" r="3" fill="#fff" opacity=".75"/>`}
+ else if(m==='dot')s=`<circle cx="15" cy="15" r="8" fill="#fff" opacity=".5"/><circle cx="45" cy="45" r="8" fill="#fff" opacity=".5"/>`;
+ document.body.style.backgroundColor=t.c1;
+ document.body.style.backgroundImage=m==='none'?'none':`url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='${z}' height='${z}'>${s}</svg>`)}")`}
+function applyTheme(){for(const k in theme)document.documentElement.style.setProperty('--'+k,theme[k]);ls.set('th2',JSON.stringify(theme));bg()}
+function drawCps(){$('cps').innerHTML=Object.keys(CL).map(k=>`<label class="cp"><input type="color" data-c="${k}" value="${theme[k]}">${CL[k]}</label>`).join('')}
+$('cps').oninput=e=>{if(e.target.dataset.c){theme[e.target.dataset.c]=e.target.value;applyTheme()}};
+document.querySelectorAll('[data-pre]').forEach(b=>b.onclick=()=>{theme={...PRE[b.dataset.pre]};applyTheme();drawCps()});
+document.querySelectorAll('[data-pat]').forEach(b=>b.onclick=()=>{ls.set('pat',b.dataset.pat);bg()});
+function drawLogo(){const d=ls.get('logo');$('logo').innerHTML=d?`<img src="${d}" alt="">`:'🐱'}
+$('logo').onclick=()=>$('lf').click();$('lgb').onclick=()=>$('lf').click();$('lgx').onclick=()=>{ls.del('logo');drawLogo()};
+$('lf').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=160;const s=Math.min(im.width,im.height);c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,160,160);ls.set('logo',c.toDataURL('image/jpeg',.85));drawLogo()};im.src=URL.createObjectURL(f)};
 let S={cfg:{products:[]},leads:[],st:{}},tab='semua',prods=[];
 const api=(p,b)=>fetch(p,b?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}:{}).then(r=>r.json());
-const list=s=>s.split(/[,\n]/).map(x=>x.trim()).filter(Boolean);
+const list=s=>s.replace(/[\u3164\u200b-\u200d\ufeff]/g,'').split(/[,\n]/).map(x=>x.trim()).filter(Boolean);
 function ago(t){const m=Math.max(0,Math.round((Date.now()-new Date(t))/60000));return m<1?'baru saja':m<60?m+' menit lalu':m<1440?Math.round(m/60)+' jam lalu':Math.round(m/1440)+' hari lalu'}
 function hl(t,w){let h=E(t);const ws=[...new Set(w.map(x=>x.replace(/^#/,'')))].filter(Boolean).sort((a,b)=>b.length-a.length).map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
  return ws.length?h.replace(new RegExp('(?<![\\p{L}\\p{N}_])('+ws.join('|')+')(?![\\p{L}\\p{N}_])','giu'),'<mark>$1</mark>'):h}
@@ -61,7 +98,7 @@ function reply(l){return 'https://x.com/intent/post?in_reply_to='+l.id+'&text='+
 function render(){
  const c=S.cfg,f=$('pf'),pv=f.value;f.innerHTML='<option value="">Semua produk</option>'+c.products.map(p=>`<option>${E(p.name)}</option>`).join('');f.value=pv;
  $('cnt').textContent=S.leads.length;
- $('tabs').innerHTML=ST.map(([k,n])=>{const x=S.leads.filter(l=>k==='semua'||(k==='simpan'?l.saved:l.status===k)).length;return `<b class="${k===tab?'on':''}" data-t="${k}">${n}${x?` <span class="pill">${x}</span>`:''}</b>`}).join('');
+ $('tabs').innerHTML=ST.map(([k,n])=>{const x=S.leads.filter(l=>k==='semua'||(k==='simpan'?l.saved:l.status===k)).length;return `<b class="${k===tab?'on':''}" data-t="${k}">${n}${x?` (${x})`:''}</b>`}).join('');
  $('err').innerHTML=S.st.lastError?`<div class="err">⚠ ${E(S.st.lastError)}</div>`:'';
  $('inf').textContent=S.st.lastPoll?`Terakhir cari: ${ago(S.st.lastPoll)} · ${S.st.lastNew||0} tweet baru`:'Belum pernah mencari. Isi API key di Pengaturan, lalu klik "Cari sekarang".';
  const q=$('q').value.toLowerCase(),p=f.value;
@@ -69,8 +106,8 @@ function render(){
  $('list').innerHTML=rows.map(l=>`<div class="card"><div class="hd"><div class="av">${E((l.name||l.user||'?')[0])}</div><div class="n"><b>${E(l.name||l.user)}</b><small>@${E(l.user)} · ${ago(l.at)}</small></div><span class="chip">${E(l.status)}</span><button class="bm" data-s="${l.id}">${l.saved?'★':'☆'}</button></div>
  <div class="tags"><span class="chip">${E(l.product)}</span><span class="chip">Mencari produk</span></div>
  <div class="tx">${hl(l.text,[...l.matched,l.product])}</div><div class="m">✓ Cocok: ${E(l.matched.join(' · '))}</div>
- <div class="act"><a class="btn" data-r="${l.id}" target="_blank" rel="noopener" href="${reply(l)}">↗ Balas pakai template</a><a class="l" target="_blank" rel="noopener" href="https://x.com/${E(l.user)}/status/${l.id}">Buka tweet ↗</a>
- <select data-st="${l.id}">${ST.slice(1,5).map(([k,n])=>`<option value="${k}" ${k===l.status?'selected':''}>${n}</option>`).join('')}</select></div></div>`).join('')||'<p class="m">Belum ada peluang di tab ini.</p>';
+ <div class="act"><a class="btn" data-r="${l.id}" target="_blank" rel="noopener" href="${reply(l)}">💬 Balas pakai template</a><a class="l" target="_blank" rel="noopener" href="https://x.com/${E(l.user)}/status/${l.id}">Buka tweet ↗</a>
+ <select data-st="${l.id}">${ST.slice(1,5).map(([k,n])=>`<option value="${k}" ${k===l.status?'selected':''}>${n}</option>`).join('')}</select></div></div>`).join('')||'<p class="m">Belum ada peluang di tab ini. ✨</p>';
 }
 async function load(){S=await api('/api/state');render()}
 $('tabs').onclick=e=>{if(e.target.closest('b')){tab=e.target.closest('b').dataset.t;render()}};
@@ -79,15 +116,17 @@ $('list').onclick=async e=>{const s=e.target.closest('[data-s]'),r=e.target.clos
  if(s){const l=S.leads.find(x=>x.id===s.dataset.s);l.saved=!l.saved;await api('/api/lead',{id:l.id,saved:l.saved});render()}
  if(r){const l=S.leads.find(x=>x.id===r.dataset.r);if(l.status==='baru'){l.status='ditindaklanjuti';api('/api/lead',{id:l.id,status:l.status});setTimeout(render,300)}}};
 $('list').onchange=async e=>{const id=e.target.dataset.st;if(id){S.leads.find(x=>x.id===id).status=e.target.value;await api('/api/lead',{id,status:e.target.value});render()}};
-$('poll').onclick=async()=>{$('poll').disabled=true;$('poll').textContent='Mencari…';await api('/api/poll',{});await load();$('poll').disabled=false;$('poll').textContent='Cari sekarang'};
-function drawProds(){$('prods').innerHTML=prods.map((p,i)=>`<label><input type="checkbox" data-i="${i}" ${p.on?'checked':''}>${E(p.name)} <a href="#" data-d="${i}" style="color:var(--mut)">✕</a></label>`).join('')}
+$('poll').onclick=async()=>{$('poll').disabled=true;$('poll').textContent='Mencari…';await api('/api/poll',{});await load();$('poll').disabled=false;$('poll').textContent='✨ Cari sekarang'};
+function drawProds(){$('prods').innerHTML=prods.map((p,i)=>`<label><input type="checkbox" data-i="${i}" ${p.on?'checked':''}>${E(p.name)} <a href="#" data-d="${i}" style="color:#111">✕</a></label>`).join('')}
 $('prods').onclick=e=>{if(e.target.dataset.d){e.preventDefault();prods.splice(+e.target.dataset.d,1);drawProds()}else if(e.target.dataset.i)prods[+e.target.dataset.i].on=e.target.checked};
 $('addp').onclick=()=>{const n=$('np').value.trim();if(n){prods.push({name:n,on:true});$('np').value='';drawProds()}};
+function drawHq(){const cur=list($('hs').value).map(h=>h.replace(/^#/,'').toLowerCase());$('hq').innerHTML=['zonauang','bealanja','belanja'].map(h=>`<button class="btn w2" data-h="${h}" ${cur.includes(h)?'disabled':''}>${cur.includes(h)?'✓':'+'} #${h}</button>`).join('')}
+$('hq').onclick=e=>{const h=e.target.dataset.h;if(h){const v=list($('hs').value);v.push(h);$('hs').value=v.join(', ');drawHq()}};$('hs').oninput=drawHq;
 $('gear').onclick=()=>{const o=$('set').style.display==='block';$('set').style.display=o?'none':'block';$('dash').style.display=o?'block':'none';
- if(!o){const c=S.cfg;prods=JSON.parse(JSON.stringify(c.products));drawProds();$('prov').value=c.provider;$('key').placeholder=c.hasKey?'•••• tersimpan (kosongkan jika tidak diganti)':'API key / Bearer token';
- $('int').value=c.intervalMin;$('max').value=c.maxPerPoll;$('hs').value=c.hashtags.join(', ');$('sg').value=c.signals.join(', ');$('ig').value=c.ignore.join(', ');$('tp').value=c.template}};
+ if(!o){const c=S.cfg;prods=JSON.parse(JSON.stringify(c.products));drawProds();drawCps();$('prov').value=c.provider;$('key').placeholder=c.hasKey?'•••• tersimpan (kosongkan jika tidak diganti)':'API key / Bearer token';
+ $('int').value=c.intervalMin;$('max').value=c.maxPerPoll;$('hs').value=c.hashtags.join(', ');$('sg').value=c.signals.join(', ');$('ig').value=c.ignore.join(', ');$('tp').value=c.template;drawHq()}};
 $('sv').onclick=async()=>{await api('/api/config',{provider:$('prov').value,apiKey:$('key').value.trim(),intervalMin:$('int').value,maxPerPoll:$('max').value,products:prods,
  hashtags:list($('hs').value).map(h=>h.replace(/^#/,'')).slice(0,8),signals:list($('sg').value).slice(0,20),ignore:list($('ig').value).slice(0,30),template:$('tp').value});
  $('key').value='';await load();$('gear').click()};
-load();setInterval(load,60000);
+applyTheme();drawLogo();load();setInterval(load,60000);
 </script></body></html>
